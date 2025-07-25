@@ -1,0 +1,16 @@
+{
+  "redaction_rules": {
+    "emails": true,
+    "ssn": true,
+    "ipv4": true
+  },
+  "encryption": {
+    "algorithm": "AES-256-GCM",
+    "key": "supersecurekeythatshouldbekeptsafe123"
+  },
+  "detection_patterns": [
+    "failed login",
+    "unauthorized access",
+    "SQL injection"
+  ]
+}

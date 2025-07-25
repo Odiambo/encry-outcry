@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: privacy-log-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: privacy-log
+  template:
+    metadata:
+      labels:
+        app: privacy-log
+    spec:
+      containers:
+        - name: backend
+          image: privacy-log-processor:latest
+          ports:
+            - containerPort: 8000
+          env:
+            - name: LOG_DIRECTORY
+              value: /app/storage/logs
+            - name: AUDIT_LOG
+              value: /app/audit/audit.log
+            - name: CONFIG_PATH
+              value: /app/config/config.json
+          volumeMounts:
+            - name: log-vol
+              mountPath: /app/storage/logs
+            - name: audit-vol
+              mountPath: /app/audit
+      volumes:
+        - name: log-vol
+          emptyDir: {}
+        - name: audit-vol
+          emptyDir: {}

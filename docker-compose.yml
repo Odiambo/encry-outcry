@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./storage/logs:/app/storage/logs
+      - ./audit:/app/audit
+    environment:
+      - LOG_DIRECTORY=/app/storage/logs
+      - AUDIT_LOG=/app/audit/audit.log
+      - CONFIG_PATH=/app/config/config.json
+
+  metrics:
+    build:
+      context: .
+    command: ["python", "monitoring/dev_metrics.py"]
+    ports:
+      - "9100:9100"
+    depends_on:
+      - backend

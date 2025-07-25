@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: privacy-log-config
+  labels:
+    app: privacy-log
+  namespace: default
+
+data:
+  CONFIG_PATH: /app/config/config.json
+  LOG_DIRECTORY: /app/storage/logs
+  AUDIT_LOG: /app/audit/audit.log
