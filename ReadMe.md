@@ -1,5 +1,5 @@
 
-# 🛡️ Privacy-First Log Processing: Zero-trst design
+# 🛡️ Privacy-First Log Processing: Zero-trust design
 
 ## Why Privacy-Centric Logging Matters
 In a world where every byte of data is valuable and surveillance capabilities grow exponentially, protecting the confidentiality and integrity of logs is critical. System logs, administrative activity, authentication records, and error trails are often goldmines of sensitive information. Exposure of them, whether accidentally or by breach, can unravel an organization's security posture.
@@ -97,7 +97,7 @@ To get started quickly with the full system using Docker Compose:
 
 ```bash
 # 1. Clone the repository
-$ git clone https://github.com/your-org/privacy-log-processor.git
+$ git clone https://github.com/Odiambo/encry-outcry.git
 $ cd privacy-log-processor
 
 # 2. Build and start the services
