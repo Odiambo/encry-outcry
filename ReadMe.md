@@ -98,7 +98,7 @@ To get started quickly with the full system using Docker Compose:
 ```bash
 # 1. Clone the repository
 $ git clone https://github.com/Odiambo/encry-outcry.git
-$ cd privacy-log-processor
+$ cd encry-outcry
 
 # 2. Build and start the services
 $ docker-compose up --build
