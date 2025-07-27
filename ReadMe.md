@@ -1,5 +1,5 @@
 
-# 🛡️ Privacy-First Log Processing: Zero-trust design
+# 🛡️ Privacy-First Log Processing: Zero-Trust Architecture and Build
 
 ## Why Privacy-Centric Logging Matters
 In a world where every byte of data is valuable and surveillance capabilities grow exponentially, protecting the confidentiality and integrity of logs is critical. System logs, administrative activity, authentication records, and error trails are often goldmines of sensitive information. Exposure of them, whether accidentally or by breach, can unravel an organization's security posture.
@@ -31,7 +31,7 @@ Zero-trust 4.0 requires incident response strategies to be in constent iteration
 - **Role-based access to logs and API metrics**
 - **Real-time monitoring via Prometheus and FastAPI**
 
-These techniques form a multilayered, Zero Trust-aligned log strategy—suited for enterprises, cloud-native apps, and regulated environments.
+These techniques form a multilayered, Zero Trust-aligned log strategy suited for enterprises, cloud-native apps, and regulated environments.
 
 ---
 
