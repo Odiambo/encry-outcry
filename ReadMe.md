@@ -93,6 +93,10 @@ The FastAPI backend exposes the following endpoints:
 
 ### 🛠️ Deployment Instructions
 
+First make sure you have the essentials: 
+>Install: docker, python (slim or whatever comes next), git, and prometheus.<br>
+Maintainers will monitor dependencies for the Dockerfile. 
+
 To get started quickly with the full system using Docker Compose:
 
 ```bash
