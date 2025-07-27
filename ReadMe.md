@@ -7,14 +7,14 @@ In a world where every byte of data is valuable and surveillance capabilities gr
 Zero Trust principles demand that **no system component is inherently trusted**, not even internal logs. Encrypting logs -especially admin logs and high-sensitivity application traces- extends Zero Trust protections to the observability layer.
 
 ### Homomorphic Encryption Ideatioin           
-Traditional encryption protects data at rest and in transit—but not during processing. **Homomorphic Encryption (HE)** allows limited computation on encrypted data without decryption, producing encrypted results that, once decrypted, match the result of operations on plaintext.
+Traditional encryption protects data at rest and in transit, but not during processing. **Homomorphic Encryption (HE)** allows limited computation on encrypted data without decryption, producing encrypted results that, once decrypted, match the result of operations on plaintext.
 
 **HE:** 
 - Eliminates the need to decrypt sensitive data during processing.
 - Reduces attack surface in shared, microservice, and AI environments.
 - Enables privacy perserving comptations in highly regulated domains like healthcare and finance.
 
-This opens the door to privacy-preserving analytics on log streams without ever exposing raw contents—especially powerful in regulated, zero-trust, or multi-tenant environments.
+This opens the door to privacy-preserving analytics on log streams without ever exposing raw contents, especially powerful in regulated, zero-trust, or multi-tenant environments.
 
 While our current system implements symmetric encryption (AES-GCM), the architecture is modular enough to support homomorphic log indexing or future federated learning extensions.
 
