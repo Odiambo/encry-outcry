@@ -6,13 +6,13 @@ In a world where every byte of data is valuable and surveillance capabilities gr
 
 Zero Trust principles demand that **no system component is inherently trusted**, not even internal logs. Encrypting logs -especially admin logs and high-sensitivity application traces- extends Zero Trust protections to the observability layer.
 
-### Homomorphic Encryption Ideatioin           
+### Homomorphic Encryption Ideation           
 Traditional encryption protects data at rest and in transit, but not during processing. **Homomorphic Encryption (HE)** allows limited computation on encrypted data without decryption, producing encrypted results that, once decrypted, match the result of operations on plaintext.
 
 **HE:** 
 - Eliminates the need to decrypt sensitive data during processing.
 - Reduces attack surface in shared, microservice, and AI environments.
-- Enables privacy perserving comptations in highly regulated domains like healthcare and finance.
+- Enables privacy preserving computations in highly regulated domains like healthcare and finance.
 
 This opens the door to privacy-preserving analytics on log streams without ever exposing raw contents, especially powerful in regulated, zero-trust, or multi-tenant environments.
 
@@ -22,7 +22,7 @@ While our current system implements symmetric encryption (AES-GCM), the architec
 ### Encryption + Logging = Modern Defense-in-Depth
 The threat arena has malware-as-a-service, microservice killchain, and AI-assisted tools. Deep observability, log integrity and privacy must be built-in not taped on later. 
 
-Zero-trust 4.0 requires incident response strategies to be in constent iteration, so contious logging, rotating access and authentication, and encryption of data should occur per transaction.
+Zero-trust 4.0 requires incident response strategies to be in constant iteration, so continuous logging, rotating access and authentication, and encryption of data should occur per transaction.
 
  Our system uses:
 - **Redaction** to neutralize PII and secrets
@@ -126,3 +126,4 @@ kubectl apply -f k8s/service.yaml
 ```
 
 > ⚠️ Logs and audit entries are stored in ephemeral volumes by default. Modify to use `PersistentVolumeClaims` for production durability.
+
