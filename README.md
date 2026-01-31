@@ -119,9 +119,15 @@ The FastAPI backend exposes the following endpoints:
 
 ---
 
-### 🛠️ Deployment Instructions
+## 🛠️ Deployment Instructions
+### 📋 Prerequisites
 
-First make sure you have the essentials: 
+- Python 3.11 or higher
+- Docker 20.10+ and Docker Compose 2.0+
+- Kubernetes 1.24+ (for production deployments)
+- Prometheus (optional, for monitoring)
+- Git
+
 >Install: docker, python (slim or whatever comes next), git, and prometheus.<br>
 Maintainers will monitor dependencies for the Dockerfile. 
 
@@ -155,5 +161,12 @@ kubectl apply -f k8s/service.yaml
 
 > ⚠️ Logs and audit entries are stored in ephemeral volumes by default. Modify to use `PersistentVolumeClaims` for production durability.
 
+### **5. License Section**
+
+```markdown
+## 📄 License
+
+This project is licensed under the GNU AGPL v3.0 - 
+see the [LICENSE](https://github.com/Odiambo/encry-outcry/blob/chef/LICENSE) file for details.
 
 
