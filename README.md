@@ -1,6 +1,17 @@
 
 # 🛡️ Privacy-First Log Processing: Zero-Trust Architecture and Build
 
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
+[![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?logo=docker&logoColor=white)](https://www.docker.com/)
+[![Kubernetes](https://img.shields.io/badge/kubernetes-%23326ce5.svg?logo=kubernetes&logoColor=white)](https://kubernetes.io/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-005571?logo=fastapi)](https://fastapi.tiangolo.com/)
+[![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?logo=prometheus&logoColor=white)](https://prometheus.io/)
+[![Security: AES-256-GCM](https://img.shields.io/badge/encryption-AES--256--GCM-green)](https://en.wikipedia.org/wiki/Galois/Counter_Mode)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+[![GitHub stars](https://img.shields.io/github/stars/Odiambo/encry-outcry?style=social)](https://github.com/Odiambo/encry-outcry)
+
 ## Why Privacy-Centric Logging Matters
 In a world where every byte of data is valuable and surveillance capabilities grow exponentially, protecting the confidentiality and integrity of logs is critical. System logs, administrative activity, authentication records, and error trails are often goldmines of sensitive information. Exposure of them, whether accidentally or by breach, can unravel an organization's security posture.
 
@@ -126,4 +137,5 @@ kubectl apply -f k8s/service.yaml
 ```
 
 > ⚠️ Logs and audit entries are stored in ephemeral volumes by default. Modify to use `PersistentVolumeClaims` for production durability.
+
 
