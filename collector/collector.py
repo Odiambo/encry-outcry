@@ -17,5 +17,5 @@ def handle_log_input(raw_log: str, source: str):
 
     log_id = store_encrypted_log(encrypted, source)
 
-    append_audit_entry(log_id, action=\"store_log\", user=source, content_hash=hash(encrypted))
+    append_audit_entry(log_id, action="store_log", user=source, content_hash=hash(encrypted))
     return log_id
