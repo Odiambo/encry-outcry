@@ -1,5 +1,9 @@
+<div align="center">
 
-# 🛡️ Privacy-First Log Processing: Zero-Trust Architecture and Build
+# 🛡️ encry-outcry
+
+## Privacy-First Log Processing  
+### Zero-Trust Architecture and Build
 
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
@@ -12,6 +16,19 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 [![GitHub stars](https://img.shields.io/github/stars/Odiambo/encry-outcry?style=social)](https://github.com/Odiambo/encry-outcry)
 
+</div>
+
+---
+
+> **Enterprise-grade log encryption system** providing AES-256-GCM encryption,  
+> PII redaction, and tamper-evident audit trails for cloud-native applications.  
+> Designed to support GDPR, HIPAA, and Zero Trust security models.
+
+**Keywords**: encrypted logging, privacy-preserving analytics, homomorphic encryption,  
+zero trust security, PII redaction, audit logging, GDPR compliance, DevSecOps,  
+log encryption, data privacy, AES-256-GCM, tamper-evident logs
+
+---
 ## Why Privacy-Centric Logging Matters
 In a world where every byte of data is valuable and surveillance capabilities grow exponentially, protecting the confidentiality and integrity of logs is critical. System logs, administrative activity, authentication records, and error trails are often goldmines of sensitive information. Exposure of them, whether accidentally or by breach, can unravel an organization's security posture.
 
@@ -137,5 +154,6 @@ kubectl apply -f k8s/service.yaml
 ```
 
 > ⚠️ Logs and audit entries are stored in ephemeral volumes by default. Modify to use `PersistentVolumeClaims` for production durability.
+
 
 
