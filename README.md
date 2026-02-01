@@ -61,6 +61,46 @@ Zero-trust 4.0 requires incident response strategies to be in constant iteration
 
 These techniques form a multilayered, Zero Trust-aligned log strategy suited for enterprises, cloud-native apps, and regulated environments.
 
+## Threat Model & Trust Assumptions
+
+This project’s threat model is grounded in protecting sensitive observability data processed and stored in cloud-native environments. The objectives are confidentiality of log contents, integrity of audit trails, and resilience against active and passive adversaries.
+
+**Primary Assets**
+- Encrypted log payloads and metadata.
+- Audit event streams and tamper-evident audit chains.
+- Redacted representations of sensitive events (PII removed).
+- Encryption keys and cryptographic nonces.
+
+**Threat Actors**
+- **External adversaries** with network access capable of eavesdropping, traffic replay, or tampering with log transport layers.
+- **Compromised internal components** (e.g., unprivileged microservices, CI pipelines) able to observe logs prior to ingestion.
+- **Insider threats** with legitimate access to parts of the observability stack (e.g., developers or administrators).
+- **Cloud control plane attackers** with potential access to observability infrastructure metadata.
+
+**Assumptions**
+1. **Key Confidentiality** — Cryptographic keys are provisioned and stored securely outside of application source code and are rotated according to policy; compromise of keys outside immediate logging services is outside scope.
+2. **Unique Nonces per Encryption** — The AES-256-GCM encryption primitive requires unique nonces for each log record to prevent cryptanalytic weaknesses (reuse undermines confidentiality and integrity). A secure nonce generation strategy is assumed.
+3. **Authenticated Transport** — TLS-terminated ingress and egress between services ensure in-flight protection; underlying network is not implicitly trusted.
+4. **Immutable Audit Logs** — Once committed, audit entries are append-only and verifiable via hash chaining.
+5. **Service Isolation** — Individual microservices are isolated via role-based access controls and Zero Trust policies; no lateral trust is assumed.
+
+**Attack Vectors and Mitigations**
+- **Eavesdropping / Interception:**  
+  Encrypted log content uses AES-256-GCM (industry-standard authenticated encryption), preventing plaintext recovery or forged modifications by passive observers. :contentReference[oaicite:1]{index=1}
+- **Tampering with Logs or Audit Entries:**  
+  Tamper-evident audit trails with hash chaining ensure unauthorized modifications are detectable; any alteration to encrypted logs invalidates authentication tags.
+- **Replay Attacks:**  
+  Unique nonces and session fingerprints mitigate replay of old log traffic; replay detection is supported at ingest endpoints.
+- **Insider Access:**  
+  PII redaction prior to encryption reduces sensitive surface exposure; explicit role-based access prevents unwarranted decryption or audit log enumeration.
+- **Key Compromise:**  
+  The model acknowledges that if encryption keys are compromised externally (outside strict boundary assumptions), confidentiality may be lost; key rotation and secure key stores are recommended.
+
+**Out-of-Scope**
+- Cryptanalysis of AES-256-GCM or fundamental algorithm weaknesses.
+- Side-channel attacks on host hardware.
+- Protection against complete cloud provider control plane compromise.
+- Homomorphic encryption.
 ---
 
 ## System Overview: Privacy Log Processor
@@ -168,5 +208,6 @@ kubectl apply -f k8s/service.yaml
 
 This project is licensed under the GNU AGPL v3.0 - 
 see the [LICENSE](https://github.com/Odiambo/encry-outcry/blob/chef/LICENSE) file for details.
+
 
 
