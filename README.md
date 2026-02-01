@@ -3,7 +3,7 @@
 # 🛡️ encry-outcry
 
 ## Privacy-First Log Processing  
-### Zero-Trust Architecture and Build
+## Zero-Trust Architecture and Build
 
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
@@ -208,6 +208,7 @@ kubectl apply -f k8s/service.yaml
 
 This project is licensed under the GNU AGPL v3.0 - 
 see the [LICENSE](https://github.com/Odiambo/encry-outcry/blob/chef/LICENSE) file for details.
+
 
 
 
